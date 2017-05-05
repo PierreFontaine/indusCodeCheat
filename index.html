@@ -37,7 +37,27 @@
       <p>interruption test d'état timer et TPMSC Chargé à $FFFF</p>
       <a href="tp5_3.html">code</a>
       <hr>
+      <h4>Cte</h4>
+      <ul>
+        <li>T_bus = 250ns = 250 * 10^{-9} s</li>
+        <li>F_clock = F_bus / [PS]</li>
+        <li>TPMOD + 1 = D / (T_bus * [PS])</li>
+      </ul>
+      <h4>timers</h4>
+      <h5>par decrementation</h5>
+      <p>
+        <ul>
+          <li>calculer la somme des cyles op</li>
+        </ul>
+      </p>
       <h4>snippets</h4>
+      <p>tempo par decrementation</p>
+      <pre style='color:#000000;background:#ffffff;'><span style='color:#e34adc; '>tempo:</span>      LDHX <span style='color:#808030; '>#</span>$FFFF
+<span style='color:#e34adc; '>bb:</span>         AIX <span style='color:#808030; '>#</span><span style='color:#808030; '>-</span><span style='color:#008c00; '>1</span>
+            CPHX <span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>#0</span>
+            BNE bb
+            RTS
+</pre>
       <p>desactiver watchdog</p>
       <pre style='color:#000000;background:#ffffff;'><span style='color:#e34adc; '>_Startup:</span>
             LDHX   <span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>#RAMEnd</span><span style='color:#808030; '>+</span><span style='color:#008c00; '>1</span>        <span style='color:#800080; '>;</span> initialize the stack pointer
